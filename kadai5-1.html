@@ -22,6 +22,9 @@
             const address = data["results"][0]
             
             document.getElementById("result").innerHTML =  myForm.zipcode.value; // 現状ではそのまま表示しているだけ
+            
+            document.getElementById("result").innerHTML = address["address1"] + address["address2"] + address["address3"];
+
         }
     </script>
 </body>
