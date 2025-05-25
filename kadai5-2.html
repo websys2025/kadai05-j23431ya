@@ -14,7 +14,15 @@
     <script>
         async function some_api(myForm) {
             // ここにコードを書く
+            //ボタンを押すと200 okと表示します
+            
+            const res = await fetch("https://dummyjson.com/http/200");
+            const data = await res.json();
+            
             document.getElementById("result").innerHTML += myForm.form_data.value+"<br />";
+            
+            document.getElementById("result").innerHTML += `${data.status} ${data.message}<br />`;
+            
             document.apiform.reset();
         }
     </script>
