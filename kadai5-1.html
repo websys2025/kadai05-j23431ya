@@ -16,6 +16,11 @@
             const endpoint = "https://zipcloud.ibsnet.co.jp/api/search";
             // ここにコードを書く
             // zipcloudのAPI呼び出して結果を表示する
+
+            const aRes = await fetch(endpoint+"?zipcode="+myForm.zipcode.value);
+            const data = await aRes.json();
+            const address = data["results"][0]
+            
             document.getElementById("result").innerHTML =  myForm.zipcode.value; // 現状ではそのまま表示しているだけ
         }
     </script>
